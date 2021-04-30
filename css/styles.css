@@ -1,0 +1,193 @@
+:root {
+	--violet: hsl(263, 55%, 52%);
+	--grayish: hsl(217, 19%, 35%);
+	--blackish: hsl(219, 29%, 14%);
+	--White: hsl(0, 0%, 100%);
+	--gray: hsl(0, 0%, 81%);
+	--grayishBlue: hsl(210, 46%, 95%);
+}
+
+* {
+	padding: 0;
+	margin: 0;
+}
+
+body {
+	background-color: var(--grayishBlue);
+	display: flex;
+	flex-direction: column;
+	align-content: center;
+	width: 100%;
+	min-height: 100vh;
+}
+
+.container {
+	margin: auto;
+	max-width: 100rem;
+	color: #fff;
+	font-family: "Barlow Semi Condensed", sans-serif;
+	padding: 2rem;
+	display: grid;
+	gap: 1.5rem;
+	grid-template-rows: 2fr 2fr;
+	grid-template-columns: repeat(2, 1.4fr) 1fr 1fr;
+	grid-template-areas: "dan dan jon kira" "jean pat pat kira";
+}
+
+.wrapper-dan {
+	border-radius: 20px;
+	grid-area: dan;
+	background-color: var(--violet);
+	padding: 2rem;
+	background-image: url(/images/bg-pattern-quotation.svg);
+	background-size: 10rem;
+	background-repeat: no-repeat;
+	background-position: 80% 0;
+}
+
+.profiles {
+	display: flex;
+	align-items: center;
+	margin-bottom: 1rem;
+}
+
+.profiles .imgs {
+	margin-right: 1.5rem;
+	border-radius: 50%;
+}
+
+.profiles .name span {
+	color: var(--gray);
+	font-weight: 500;
+	display: block;
+}
+
+p {
+	padding-top: 1rem;
+	line-height: 1.4;
+	font-weight: 500;
+	color: var(--grayish);
+}
+.wrapper-jon::after {
+	content: "";
+}
+.wrapper-jon {
+	box-shadow: 0 10px 20px -10px hsla(207, 91%, 13%, 0.404);
+	border-radius: 20px;
+	grid-area: jon;
+	background-color: var(--grayish);
+	padding: 2rem;
+}
+
+.content-jean p {
+	color: var(--grayish);
+}
+.content-jon p,
+.content-dan p {
+	color: var(--gray);
+}
+
+.wrapper-jean::after {
+	content: "";
+	z-index: -1;
+	position: absolute;
+	border-radius: 45%;
+	right: 1%;
+	top: 39%;
+	width: 60%;
+	height: 60%;
+	background-color: #000;
+	box-shadow: 15px 15px 45px rgba(76, 100, 122, 0.37);
+}
+
+.wrapper-jean {
+	border-radius: 20px;
+	position: relative;
+	grid-area: jean;
+	color: #000;
+	background-color: var(--White);
+	padding: 2rem;
+	box-shadow: 0 0 20px -10px rgba(76, 100, 122, 0.37);
+}
+
+.wrapper-pat::after {
+	content: "";
+	border-radius: 40%;
+	z-index: -1;
+	position: absolute;
+	right: 2%;
+	top: 38%;
+	width: 70%;
+	height: 60%;
+	background: rgb(255, 255, 255);
+	box-shadow: 15px 15px 20px rgba(15, 14, 14, 0.322);
+}
+
+.wrapper-pat {
+	position: relative;
+	border-radius: 20px;
+	grid-area: pat;
+	background-color: var(--blackish);
+	padding: 2rem;
+}
+
+.profile-pat .imgs {
+	border: 3px solid var(--violet);
+}
+
+.profile-dan .imgs {
+	border: 3px solid #a775f1;
+}
+
+.content-pat p {
+	color: var(--gray);
+}
+
+.wrapper-kira::after {
+	content: "";
+	position: absolute;
+	width: 40%;
+	border-radius: 0 60px 50px 0;
+	z-index: -1;
+	height: 60%;
+	right: 4%;
+	bottom: 2%;
+	background: #000;
+	box-shadow: 5px 25px 35px rgba(8, 47, 73, 0.226);
+}
+
+.wrapper-kira {
+	position: relative;
+	border-radius: 20px;
+	grid-area: kira;
+	color: #000;
+	background-color: var(--White);
+	padding: 2rem;
+}
+
+.attribution {
+	font-size: 11px;
+	text-align: center;
+}
+
+.attribution a {
+	color: hsl(228, 45%, 44%);
+}
+
+@media (max-width: 1220px) {
+	.container {
+		display: grid;
+		gap: 1.5rem;
+		margin: 10%;
+		grid-template-rows: 2fr;
+		grid-template-columns: 1fr;
+		grid-template-areas: "dan dan jon" "jean pat pat" "kira kira kira";
+	}
+}
+
+@media (max-width: 820px) {
+	.container {
+		margin: auto;
+		grid-template-areas: "dan" "dan" "jon" "jean" "pat" "kira";
+	}
+}
